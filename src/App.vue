@@ -1,24 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <a-row>
+        <a-date-picker id="a" @change="onChange" placeholder="Select date"/>
+      </a-row>
+      <a-row>
+        <a-month-picker id="d" @change="onChange" placeholder="Select month"/>
+      </a-row>
+      <a-row>
+        <a-range-picker id="b" @change="onChange"/>
+      </a-row>
+      <a-row>
+        <a-week-picker @change="onChange" placeholder="Select week"/>
+      </a-row>
+    </div>
+
+    <div>
+      <a-button type="primary">Primary</a-button>
+      <a-button>Default</a-button>
+      <a-button type="dashed">Dashed</a-button>
+      <a-button type="danger">Danger</a-button>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  name: "app",
+  components: {},
+  methods: {
+    onChange(date, dateString) {
+      console.log(date, dateString);
+    }
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
