@@ -43,3 +43,13 @@ Vue.config.productionTip = false
 Vue.use(Antd)
 ```
 下面还是要保留render的方式，否则有问题。
+
+### electron
+
+https://github.com/electron/electron
+```
+git clone https://github.com/electron/electron-quick-start
+cd electron-quick-start
+npm install
+npm start
+```
