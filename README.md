@@ -53,3 +53,7 @@ cd electron-quick-start
 npm install
 npm start
 ```
+
+### 修改图标
+
+https://github.com/electron/rcedit/releases
