@@ -57,3 +57,10 @@ npm start
 ### 修改图标
 
 https://github.com/electron/rcedit/releases
+
+
+### TODO
+
+1. DONE vue create的项目在vue.config.js中加入publicPath:"./"参数确保build出来的是相对路径
+1. DONE 加入websocket服务端：nodejs+express-ws
+1. TODO 通过websocket和后端交互，并把数据展示在前端

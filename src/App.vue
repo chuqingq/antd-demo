@@ -14,7 +14,7 @@
         </a-row>
         <br>
         <a-row>
-          <a-button type="primary">Primary</a-button>
+          <a-button type="primary" @click="websocket">Primary</a-button>
           <a-button>Default</a-button>
           <a-button type="dashed">Dashed</a-button>
           <a-button type="danger">Danger</a-button>
@@ -45,6 +45,29 @@ export default {
     },
     callback(key) {
       console.log(key);
+    },
+    websocket() {
+      var ws = new WebSocket("ws://localhost:8080/");
+
+      ws.onopen = function() {
+        // Web Socket 已连接上，使用 send() 方法发送数据
+        ws.send("发送数据");
+        console.log("数据发送中...");
+      };
+
+      ws.onerror = function() {
+        console.log("websocket.onerror");
+      };
+
+      ws.onmessage = function(evt) {
+        var received_msg = evt.data;
+        console.log("数据已接收...");
+      };
+
+      ws.onclose = function() {
+        // 关闭 websocket
+        console.log("连接已关闭...");
+      };
     }
   }
 };
